@@ -1,6 +1,6 @@
-/home/inoj/Desktop/cw/user-service/src/main/java/com/clothify/userservice/UserServiceApplication.java
-/home/inoj/Desktop/cw/user-service/src/main/java/com/clothify/userservice/service/MailService.java
-/home/inoj/Desktop/cw/user-service/src/main/java/com/clothify/userservice/repository/UserRepository.java
-/home/inoj/Desktop/cw/user-service/src/main/java/com/clothify/userservice/service/UserService.java
-/home/inoj/Desktop/cw/user-service/src/main/java/com/clothify/userservice/controller/UserController.java
-/home/inoj/Desktop/cw/user-service/src/main/java/com/clothify/userservice/entity/User.java
+/home/inoj/Desktop/ij/cw/user-service/src/main/java/com/clothify/userservice/service/UserService.java
+/home/inoj/Desktop/ij/cw/user-service/src/main/java/com/clothify/userservice/UserServiceApplication.java
+/home/inoj/Desktop/ij/cw/user-service/src/main/java/com/clothify/userservice/controller/UserController.java
+/home/inoj/Desktop/ij/cw/user-service/src/main/java/com/clothify/userservice/repository/UserRepository.java
+/home/inoj/Desktop/ij/cw/user-service/src/main/java/com/clothify/userservice/entity/User.java
+/home/inoj/Desktop/ij/cw/user-service/src/main/java/com/clothify/userservice/service/MailService.java
