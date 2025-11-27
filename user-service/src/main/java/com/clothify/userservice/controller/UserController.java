@@ -20,13 +20,11 @@ public class UserController {
         this.mailService = mailService;
     }
 
-    // ✅ FIXED: Changed from /all to empty path
     @GetMapping("")
     public List<User> getAll() {
         return userService.getAllUsers();
     }
 
-    // ✅ NEW: Get user by ID
     @GetMapping("/{id}")
     public User getById(@PathVariable Long id) {
         return userService.getUserById(id)
@@ -47,7 +45,7 @@ public class UserController {
                 mailService.sendMail(u.getEmail(), "Welcome to Clothify",
                         "Hello " + u.getName() + ", thanks for registering.");
             } catch (Exception e) {
-                // ignore mail errors for now
+
             }
             resp.put("status", "success");
             resp.put("user", u);

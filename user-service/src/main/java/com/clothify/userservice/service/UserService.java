@@ -31,12 +31,11 @@ public class UserService {
             throw new RuntimeException("Email already exists");
         }
 
-        // ✅ Set default role to USER if not provided
         if (user.getRole() == null || user.getRole().isEmpty()) {
             user.setRole("USER");
         }
 
-        user.setPassword(user.getPassword()); // plain for now; later hash
+        user.setPassword(user.getPassword());
         return repo.save(user);
     }
 

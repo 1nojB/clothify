@@ -13,9 +13,6 @@ import java.util.Arrays;
 @Configuration
 public class GatewayConfig {
 
-    /**
-     * CORS configuration for the gateway
-     */
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
