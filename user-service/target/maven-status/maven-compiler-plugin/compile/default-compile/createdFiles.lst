@@ -1,0 +1,6 @@
+com/clothify/userservice/UserServiceApplication.class
+com/clothify/userservice/service/MailService.class
+com/clothify/userservice/entity/User.class
+com/clothify/userservice/repository/UserRepository.class
+com/clothify/userservice/service/UserService.class
+com/clothify/userservice/controller/UserController.class

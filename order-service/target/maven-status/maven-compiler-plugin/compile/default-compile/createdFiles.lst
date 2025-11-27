@@ -1,0 +1,15 @@
+com/clothify/orderservice/config/RestTemplateConfig.class
+com/clothify/orderservice/entity/Order$OrderItemDTO.class
+com/clothify/orderservice/client/InventoryClient$InventoryResponse.class
+com/clothify/orderservice/entity/OrderItem.class
+com/clothify/orderservice/client/UserClient$UserResponse.class
+com/clothify/orderservice/entity/Order.class
+com/clothify/orderservice/service/OrderService.class
+com/clothify/orderservice/OrderServiceApplication.class
+com/clothify/orderservice/client/UserClient.class
+com/clothify/orderservice/repository/OrderRepository.class
+com/clothify/orderservice/controller/OrderController.class
+com/clothify/orderservice/client/ProductClient$ProductResponse.class
+com/clothify/orderservice/client/InventoryClient.class
+com/clothify/orderservice/repository/OrderItemRepository.class
+com/clothify/orderservice/client/ProductClient.class
