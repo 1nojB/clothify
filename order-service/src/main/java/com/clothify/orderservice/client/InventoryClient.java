@@ -12,9 +12,8 @@ public class InventoryClient {
 
     private static final String INVENTORY_URL = "http://localhost:8083/api/inventory";
 
-    /**
-     * Check if product has enough stock
-     */
+    // Check if product has enough stock
+
     public boolean hasStock(Integer productId, int quantity) {
         try {
             String url = INVENTORY_URL + "/" + productId;
@@ -26,9 +25,8 @@ public class InventoryClient {
         }
     }
 
-    /**
-     * Get current stock quantity
-     */
+    // Get current stock quantity
+
     public Integer getStockQuantity(Integer productId) {
         try {
             String url = INVENTORY_URL + "/" + productId;
@@ -40,9 +38,8 @@ public class InventoryClient {
         }
     }
 
-    /**
-     * Reduce stock when order is placed
-     */
+    // Reduce stock when order is placed
+
     public void reduceStock(Integer productId, int quantity) {
         try {
             String url = INVENTORY_URL + "/reduce/" + productId + "?qty=" + quantity;
@@ -53,9 +50,8 @@ public class InventoryClient {
         }
     }
 
-    /**
-     * Restore stock if order is cancelled
-     */
+    // Restore stock if order is cancelled
+
     public void restoreStock(Integer productId, int quantity) {
         try {
             String url = INVENTORY_URL + "/increase/" + productId + "?qty=" + quantity;
@@ -66,19 +62,33 @@ public class InventoryClient {
         }
     }
 
-    // Response class
     public static class InventoryResponse {
         private Long id;
         private Long productId;
         private Integer quantity;
 
-        public Long getId() { return id; }
-        public void setId(Long id) { this.id = id; }
+        public Long getId() {
+            return id;
+        }
 
-        public Long getProductId() { return productId; }
-        public void setProductId(Long productId) { this.productId = productId; }
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-        public Integer getQuantity() { return quantity; }
-        public void setQuantity(Integer quantity) { this.quantity = quantity; }
+        public Long getProductId() {
+            return productId;
+        }
+
+        public void setProductId(Long productId) {
+            this.productId = productId;
+        }
+
+        public Integer getQuantity() {
+            return quantity;
+        }
+
+        public void setQuantity(Integer quantity) {
+            this.quantity = quantity;
+        }
     }
 }

@@ -12,9 +12,8 @@ public class ProductClient {
 
     private static final String PRODUCT_URL = "http://localhost:8080/product-service/products";
 
-    /**
-     * Get product details
-     */
+    // Get product details
+
     public ProductResponse getProduct(Integer productId) {
         try {
             String url = PRODUCT_URL + "/" + productId;
@@ -25,23 +24,20 @@ public class ProductClient {
         }
     }
 
-    /**
-     * Validate product exists
-     */
+    // Validate product exists
+
     public boolean productExists(Integer productId) {
         ProductResponse product = getProduct(productId);
         return product != null;
     }
 
-    /**
-     * Get product name
-     */
+    // Get product name
+
     public String getProductName(Integer productId) {
         ProductResponse product = getProduct(productId);
         return product != null ? product.getName() : "Unknown Product";
     }
 
-    // Response class
     public static class ProductResponse {
         private Integer pid;
         private String name;
@@ -52,29 +48,68 @@ public class ProductClient {
         private String imageUrl;
         private Integer stockQuantity;
 
-        // Getters and Setters
-        public Integer getPid() { return pid; }
-        public void setPid(Integer pid) { this.pid = pid; }
+        public Integer getPid() {
+            return pid;
+        }
 
-        public String getName() { return name; }
-        public void setName(String name) { this.name = name; }
+        public void setPid(Integer pid) {
+            this.pid = pid;
+        }
 
-        public String getDescription() { return description; }
-        public void setDescription(String description) { this.description = description; }
+        public String getName() {
+            return name;
+        }
 
-        public String getBrand() { return brand; }
-        public void setBrand(String brand) { this.brand = brand; }
+        public void setName(String name) {
+            this.name = name;
+        }
 
-        public String getCategory() { return category; }
-        public void setCategory(String category) { this.category = category; }
+        public String getDescription() {
+            return description;
+        }
 
-        public Double getPrice() { return price; }
-        public void setPrice(Double price) { this.price = price; }
+        public void setDescription(String description) {
+            this.description = description;
+        }
 
-        public String getImageUrl() { return imageUrl; }
-        public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+        public String getBrand() {
+            return brand;
+        }
 
-        public Integer getStockQuantity() { return stockQuantity; }
-        public void setStockQuantity(Integer stockQuantity) { this.stockQuantity = stockQuantity; }
+        public void setBrand(String brand) {
+            this.brand = brand;
+        }
+
+        public String getCategory() {
+            return category;
+        }
+
+        public void setCategory(String category) {
+            this.category = category;
+        }
+
+        public Double getPrice() {
+            return price;
+        }
+
+        public void setPrice(Double price) {
+            this.price = price;
+        }
+
+        public String getImageUrl() {
+            return imageUrl;
+        }
+
+        public void setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+        }
+
+        public Integer getStockQuantity() {
+            return stockQuantity;
+        }
+
+        public void setStockQuantity(Integer stockQuantity) {
+            this.stockQuantity = stockQuantity;
+        }
     }
 }
