@@ -1,4 +1,3 @@
-// src/context/CartContext.jsx
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
@@ -36,7 +35,6 @@ export function CartProvider({ children }) {
     setItems((prev) => {
       const existing = prev.find((p) => String(p.id) === id);
       if (existing) {
-        // clone all to keep immutability
         return prev.map((p) =>
           String(p.id) === id
             ? { ...p, quantity: (p.quantity || 0) + qty }
@@ -92,7 +90,6 @@ export function CartProvider({ children }) {
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useCart() {
   const context = useContext(CartContext);
   if (!context)

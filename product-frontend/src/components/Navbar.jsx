@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
@@ -51,7 +50,7 @@ export default function Navbar() {
           </>
         ) : (
           <>
-            {/* ✅ Show Admin link only for admins */}
+            
             {isAdmin() && (
               <a className="nav-link" href="/admin" style={{
                 background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',

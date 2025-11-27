@@ -1,4 +1,3 @@
-// src/pages/admin/ProductManagement.jsx
 import React, { useState, useEffect } from 'react';
 import { fetchAllProducts, createProduct, updateProduct, deleteProduct } from '../../api';
 
@@ -170,7 +169,7 @@ export default function ProductManagement() {
                 </table>
             </div>
 
-            {/* Modal */}
+            
             {showModal && (
                 <div className="modal-overlay" onClick={() => setShowModal(false)}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>

@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React, { useEffect, useState } from 'react';
 import { fetchAllProducts, searchProductsByName } from '../api';
 import ProductCard from '../components/ProductCard';
@@ -23,7 +22,6 @@ export default function Home() {
   useEffect(() => {
     loadProducts();
 
-    // listen to Navbar search events
     const handler = async (e) => {
       const q = (e.detail || '').trim();
       if (!q) {
@@ -65,7 +63,6 @@ export default function Home() {
     }
   }
 
-  // apply category filter + sorting whenever inputs change
   useEffect(() => {
     let list = Array.isArray(products) ? [...products] : [];
     if (activeCategory && activeCategory !== 'All') {
@@ -73,21 +70,18 @@ export default function Home() {
     }
     if (sortBy === 'price-asc') list.sort((a, b) => (a.price || 0) - (b.price || 0));
     if (sortBy === 'price-desc') list.sort((a, b) => (b.price || 0) - (a.price || 0));
-    // newest fallback: keep original order (server-provided)
     setDisplay(list);
   }, [products, activeCategory, sortBy]);
 
-  // pass the real addToCart from the context into ProductCard
   const onAddToCart = (product) => {
     addToCart(product, 1);
-    // optionally open drawer:
     window.dispatchEvent(new CustomEvent('toggle-cart'));
   };
 
   return (
     <section>
       <div className="container">
-        {/* HERO — now the content sits over the banner image (left overlay) */}
+        
         <div className="hero" role="region" aria-label="Promotional hero">
           <div className="hero-media">
             <picture>
@@ -99,7 +93,7 @@ export default function Home() {
               />
             </picture>
 
-            {/* Left-side overlay content INSIDE the banner image */}
+            
             <div className="banner-content" role="article" aria-label="Banner headline and CTA">
               <h1 className="banner-title">Clothify — Modern, comfortable clothing</h1>
               <p className="banner-sub">Discover the latest arrivals — clean styles, premium fabrics. Free shipping over Rs 5,000.</p>
@@ -108,7 +102,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Controls */}
+        
         <div className="controls" aria-hidden={loading}>
           <div className="filters" role="toolbar" aria-label="Category filters">
             {categories.map(cat => (
@@ -133,7 +127,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Content area */}
+        
         {loading && (
           <div className="grid" aria-busy="true">
             {Array.from({ length: 6 }).map((_, i) => (<SkeletonCard key={i} />))}

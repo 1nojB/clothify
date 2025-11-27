@@ -1,4 +1,3 @@
-// src/components/ProductCard.jsx
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
@@ -16,9 +15,7 @@ export default function ProductCard({ product, onAddToCart }) {
     e.stopPropagation();
     e.preventDefault();
 
-    // Check if user is authenticated
     if (!isAuthenticated()) {
-      // Redirect to login with current page as redirect target
       navigate(`/login?redirect=${encodeURIComponent(window.location.pathname)}`);
       return;
     }
@@ -28,7 +25,6 @@ export default function ProductCard({ product, onAddToCart }) {
       onAddToCart(product);
     } else {
       addToCart(product, 1);
-      // open cart drawer if you want
       window.dispatchEvent(new CustomEvent("toggle-cart"));
     }
   }

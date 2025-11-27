@@ -24,7 +24,6 @@ export function AuthProvider({ children }) {
         return user !== null;
     };
 
-    // ✅ Check if user is admin
     const isAdmin = () => {
         return user && user.role === 'ADMIN';
     };

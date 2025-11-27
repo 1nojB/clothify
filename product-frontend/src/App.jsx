@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -10,14 +9,12 @@ import CartDrawer from './components/CartDrawer';
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 
-// Admin pages
 import AdminDashboard from './pages/admin/AdminDashboard';
 import ProductManagement from './pages/admin/ProductManagement';
 import OrderManagement from './pages/admin/OrderManagement';
 import UserManagement from './pages/admin/UserManagement';
 import InventoryManagement from './pages/admin/InventoryManagement';
 
-// ✅ Import AdminRoute
 import AdminRoute from './components/AdminRoute';
 
 
@@ -25,10 +22,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        {/* ✅ Navbar always visible */}
         <Navbar />
 
-        {/* ✅ CartDrawer mounted globally so it can listen for toggle events */}
         <CartDrawer />
 
         <main className="container" style={{ paddingTop: 18 }}>
@@ -40,7 +35,6 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
-            {/* ✅ Protected Admin Routes */}
             <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
             <Route path="/admin/products" element={<AdminRoute><ProductManagement /></AdminRoute>} />
             <Route path="/admin/orders" element={<AdminRoute><OrderManagement /></AdminRoute>} />

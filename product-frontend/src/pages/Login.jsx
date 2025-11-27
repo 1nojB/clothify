@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from "react";
 import { loginUser } from "../services/auth";
 import { useNavigate, useLocation } from "react-router-dom";
