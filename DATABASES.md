@@ -1,7 +1,11 @@
 
 -- Create databases
+
 CREATE DATABASE IF NOT EXISTS productdb;
+
 CREATE DATABASE IF NOT EXISTS userdb;
+
 CREATE DATABASE IF NOT EXISTS orderdb;
+
 CREATE DATABASE IF NOT EXISTS inventorydb;
 
