@@ -12,24 +12,18 @@ public class InventoryClient {
 
     private static final String INVENTORY_SERVICE_URL = "http://localhost:8083/api/inventory";
 
-    /**
-     * Get stock quantity for a product from Inventory Service
-     */
     public Integer getStockQuantity(int productId) {
         try {
             String url = INVENTORY_SERVICE_URL + "/" + productId;
             InventoryResponse response = restTemplate.getForObject(url, InventoryResponse.class);
             return response != null ? response.getQuantity() : 0;
         } catch (Exception e) {
-            // If inventory service is down or product not found, return 0
+
             System.err.println("Failed to get inventory for product " + productId + ": " + e.getMessage());
             return 0;
         }
     }
 
-    /**
-     * Create inventory record for a new product
-     */
     public void createInventory(int productId, int quantity) {
         try {
             InventoryRequest request = new InventoryRequest();
@@ -43,9 +37,6 @@ public class InventoryClient {
         }
     }
 
-    /**
-     * Update inventory quantity for a product
-     */
     public void updateInventory(int productId, int quantity) {
         try {
             String url = INVENTORY_SERVICE_URL + "/" + productId;
@@ -59,7 +50,6 @@ public class InventoryClient {
         }
     }
 
-    // Response class for inventory data
     public static class InventoryResponse {
         private Long id;
         private Long productId;
@@ -90,7 +80,6 @@ public class InventoryClient {
         }
     }
 
-    // Request class for creating/updating inventory
     public static class InventoryRequest {
         private Long productId;
         private Integer quantity;

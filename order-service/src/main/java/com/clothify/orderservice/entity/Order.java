@@ -30,7 +30,6 @@ public class Order {
     @Column(name = "status")
     private String status;
 
-    // Transient field for order items (not stored in orders table)
     @Transient
     private List<OrderItemDTO> items;
 
@@ -39,44 +38,97 @@ public class Order {
         this.status = "PENDING";
     }
 
-    // Getters and setters
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    public Integer getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    public Integer getCustomerId() { return customerId; }
-    public void setCustomerId(Integer customerId) { this.customerId = customerId; }
+    public String getName() {
+        return name;
+    }
 
-    public LocalDate getDate() { return date; }
-    public void setDate(LocalDate date) { this.date = date; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public String getPaymentMethod() { return paymentMethod; }
-    public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
+    public Integer getCustomerId() {
+        return customerId;
+    }
 
-    public Double getTotal() { return total; }
-    public void setTotal(Double total) { this.total = total; }
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public LocalDate getDate() {
+        return date;
+    }
 
-    public List<OrderItemDTO> getItems() { return items; }
-    public void setItems(List<OrderItemDTO> items) { this.items = items; }
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 
-    // Inner class for order item data transfer
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<OrderItemDTO> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItemDTO> items) {
+        this.items = items;
+    }
+
     public static class OrderItemDTO {
         private Integer productId;
         private Integer quantity;
         private Double price;
 
-        public Integer getProductId() { return productId; }
-        public void setProductId(Integer productId) { this.productId = productId; }
+        public Integer getProductId() {
+            return productId;
+        }
 
-        public Integer getQuantity() { return quantity; }
-        public void setQuantity(Integer quantity) { this.quantity = quantity; }
+        public void setProductId(Integer productId) {
+            this.productId = productId;
+        }
 
-        public Double getPrice() { return price; }
-        public void setPrice(Double price) { this.price = price; }
+        public Integer getQuantity() {
+            return quantity;
+        }
+
+        public void setQuantity(Integer quantity) {
+            this.quantity = quantity;
+        }
+
+        public Double getPrice() {
+            return price;
+        }
+
+        public void setPrice(Double price) {
+            this.price = price;
+        }
     }
 }

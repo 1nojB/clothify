@@ -25,10 +25,10 @@ public class OrderService {
 
     @Autowired
     public OrderService(OrderRepository ordRepo,
-                        OrderItemRepository orderItemRepo,
-                        InventoryClient inventoryClient,
-                        ProductClient productClient,
-                        UserClient userClient) {
+            OrderItemRepository orderItemRepo,
+            InventoryClient inventoryClient,
+            ProductClient productClient,
+            UserClient userClient) {
         this.ordRepo = ordRepo;
         this.orderItemRepo = orderItemRepo;
         this.inventoryClient = inventoryClient;
@@ -43,14 +43,15 @@ public class OrderService {
     public Optional<Order> getOrderById(Integer id) {
         Optional<Order> order = ordRepo.findById(id);
         order.ifPresent(o -> {
-            List<OrderItem> items = orderItemRepo.findByOrderId(o.getId());
+
+            orderItemRepo.findByOrderId(o.getId());
         });
         return order;
     }
 
     @Transactional
     public Order createOrder(Order order) {
-        // Set defaults
+
         if (order.getDate() == null) {
             order.setDate(java.time.LocalDate.now());
         }
@@ -58,46 +59,37 @@ public class OrderService {
             order.setStatus("PENDING");
         }
 
-        // ✅ NEW: Validate user exists
         if (order.getCustomerId() != null && !userClient.userExists(order.getCustomerId())) {
             throw new RuntimeException("User not found with ID: " + order.getCustomerId());
         }
 
-        // Validate and check stock for all items
         if (order.getItems() != null && !order.getItems().isEmpty()) {
             for (Order.OrderItemDTO item : order.getItems()) {
 
-                // ✅ NEW: Validate product exists
                 if (!productClient.productExists(item.getProductId())) {
                     throw new RuntimeException("Product not found with ID: " + item.getProductId());
                 }
 
-                // Check if product has enough stock
                 if (!inventoryClient.hasStock(item.getProductId(), item.getQuantity())) {
                     Integer currentStock = inventoryClient.getStockQuantity(item.getProductId());
                     String productName = productClient.getProductName(item.getProductId());
                     throw new RuntimeException(
                             "Insufficient stock for product '" + productName + "' (ID: " + item.getProductId() + "). " +
-                                    "Available: " + currentStock + ", Requested: " + item.getQuantity()
-                    );
+                                    "Available: " + currentStock + ", Requested: " + item.getQuantity());
                 }
             }
 
-            // Save order first
             Order savedOrder = ordRepo.save(order);
 
-            // Reduce inventory and save order items
             for (Order.OrderItemDTO item : order.getItems()) {
-                // Reduce inventory
+
                 inventoryClient.reduceStock(item.getProductId(), item.getQuantity());
 
-                // Save order item
                 OrderItem orderItem = new OrderItem(
                         savedOrder.getId(),
                         item.getProductId(),
                         item.getQuantity(),
-                        item.getPrice()
-                );
+                        item.getPrice());
                 orderItemRepo.save(orderItem);
             }
 

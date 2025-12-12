@@ -34,7 +34,6 @@ public class InventoryController {
         return service.saveOrUpdate(inventory);
     }
 
-    // ✅ NEW: Update inventory quantity directly
     @PutMapping("/{productId}")
     public ResponseEntity<Inventory> updateQuantity(@PathVariable Long productId,
             @RequestBody Map<String, Integer> update) {

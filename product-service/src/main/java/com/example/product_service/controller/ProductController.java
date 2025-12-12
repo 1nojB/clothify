@@ -28,10 +28,9 @@ public class ProductController {
         return productService.saveProduct(product);
     }
 
-    // ✅ FIXED: Changed to accept {pid} in path
     @PutMapping(path = "/products/{pid}")
     public Product updateProduct(@PathVariable int pid, @RequestBody Product product) {
-        product.setPid(pid); // Set the ID from the path parameter
+        product.setPid(pid);
         return productService.updattingProduct(product);
     }
 

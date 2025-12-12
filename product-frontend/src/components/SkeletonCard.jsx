@@ -1,4 +1,4 @@
-// src/components/SkeletonCard.jsx
+
 import React from 'react';
 
 export default function SkeletonCard() {

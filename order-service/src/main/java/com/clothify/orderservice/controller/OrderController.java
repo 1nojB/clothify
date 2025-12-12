@@ -48,7 +48,6 @@ public class OrderController {
         return ResponseEntity.ok(updated);
     }
 
-    // ✅ NEW: Update order status specifically
     @PutMapping("/{id}/status")
     public ResponseEntity<Order> updateStatus(@PathVariable Integer id, @RequestBody Map<String, String> statusUpdate) {
         Optional<Order> orderOpt = orderService.getOrderById(id);
