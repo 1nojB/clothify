@@ -1,4 +1,3 @@
-// src/pages/ProductDetails.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getProductById } from '../api';
@@ -26,14 +25,11 @@ export default function ProductDetails() {
   }, [pid]);
 
   const handleAddToCart = () => {
-    // Check if user is authenticated
     if (!isAuthenticated()) {
-      // Redirect to login with current page as redirect target
       navigate(`/login?redirect=${encodeURIComponent(window.location.pathname)}`);
       return;
     }
 
-    // Add to cart and open drawer
     addToCart(product, 1);
     window.dispatchEvent(new CustomEvent('toggle-cart'));
   };

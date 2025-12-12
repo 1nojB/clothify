@@ -1,4 +1,3 @@
-// src/pages/Register.jsx
 import React, { useState } from "react";
 import { registerUser, saveUserLocally } from "../services/auth";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +21,6 @@ export default function Register() {
   async function onSubmit(e) {
     e.preventDefault();
 
-    // basic validations
     if (!form.name.trim()) return setError("Name is required");
     if (!form.email.includes("@")) return setError("Valid email required");
     if (form.password.length < 4)

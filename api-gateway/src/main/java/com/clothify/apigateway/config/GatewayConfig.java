@@ -13,11 +13,14 @@ import java.util.Arrays;
 @Configuration
 public class GatewayConfig {
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Arrays.asList("*"));
+        corsConfig.setAllowedOriginPatterns(Arrays.asList("*"));
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
         corsConfig.setAllowCredentials(false);

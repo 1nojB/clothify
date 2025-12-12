@@ -1,18 +1,12 @@
-// src/api.js
-// API Gateway Base URL - All requests now go through the gateway
 const API_GATEWAY = import.meta.env.VITE_API_GATEWAY || 'http://localhost:8084';
 
-// API Base URLs for all microservices (routed through gateway)
 export const PRODUCT_API = import.meta.env.VITE_PRODUCT_API || `${API_GATEWAY}/product-service`;
 export const USER_API = import.meta.env.VITE_USER_API || `${API_GATEWAY}/api/users`;
 export const ORDER_API = import.meta.env.VITE_ORDER_API || `${API_GATEWAY}/api`;
 export const INVENTORY_API = import.meta.env.VITE_INVENTORY_API || `${API_GATEWAY}/api`;
 
-// Legacy exports for backward compatibility
 export const API_BASE = PRODUCT_API;
 export const ORDER_API_BASE = ORDER_API;
-
-// ==================== PRODUCT API ====================
 export async function fetchAllProducts() {
   const res = await fetch(`${PRODUCT_API}/products`);
   if (!res.ok) throw new Error(`Failed to fetch products: ${res.status}`);
@@ -60,7 +54,6 @@ export async function deleteProduct(pid) {
   return res.ok;
 }
 
-// ==================== ORDER API ====================
 export async function fetchAllOrders() {
   const res = await fetch(`${ORDER_API}/orders`);
   if (!res.ok) throw new Error(`Failed to fetch orders: ${res.status}`);
@@ -94,7 +87,6 @@ export async function updateOrderStatus(orderId, status) {
   return res.json();
 }
 
-// ==================== USER API ====================
 export async function fetchAllUsers() {
   const res = await fetch(`${USER_API}`);
   if (!res.ok) throw new Error(`Failed to fetch users: ${res.status}`);
@@ -108,7 +100,6 @@ export async function getUserById(userId) {
   return res.json();
 }
 
-// ==================== INVENTORY API ====================
 export async function fetchAllInventory() {
   const res = await fetch(`${INVENTORY_API}/inventory`);
   if (!res.ok) throw new Error(`Failed to fetch inventory: ${res.status}`);

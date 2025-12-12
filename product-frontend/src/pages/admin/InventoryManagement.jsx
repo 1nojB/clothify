@@ -1,4 +1,3 @@
-// src/pages/admin/InventoryManagement.jsx
 import React, { useState, useEffect } from 'react';
 import { fetchAllProducts, fetchAllInventory, updateInventory } from '../../api';
 
@@ -38,7 +37,6 @@ export default function InventoryManagement() {
         }
     }
 
-    // Merge products with inventory data
     const mergedData = products.map(product => {
         const inv = inventory.find(i => i.productId === product.pid);
         return {
@@ -115,7 +113,7 @@ export default function InventoryManagement() {
                 </table>
             </div>
 
-            {/* Inventory Stats */}
+            
             <div className="order-stats" style={{ marginTop: 32, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
                 <div className="stat-mini">
                     <div className="stat-mini-label">Total Products</div>

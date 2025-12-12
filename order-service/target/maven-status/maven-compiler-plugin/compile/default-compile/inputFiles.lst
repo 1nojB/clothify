@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /home/inoj/ead/cw/order-service/src/main/java/com/clothify/orderservice/repository/OrderRepository.java
 /home/inoj/ead/cw/order-service/src/main/java/com/clothify/orderservice/entity/OrderItem.java
 /home/inoj/ead/cw/order-service/src/main/java/com/clothify/orderservice/repository/OrderItemRepository.java
@@ -9,3 +10,16 @@
 /home/inoj/ead/cw/order-service/src/main/java/com/clothify/orderservice/client/ProductClient.java
 /home/inoj/ead/cw/order-service/src/main/java/com/clothify/orderservice/controller/OrderController.java
 /home/inoj/ead/cw/order-service/src/main/java/com/clothify/orderservice/entity/Order.java
+=======
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/config/RestTemplateConfig.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/client/ProductClient.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/client/InventoryClient.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/entity/OrderItem.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/repository/OrderItemRepository.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/repository/OrderRepository.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/service/OrderService.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/entity/Order.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/OrderServiceApplication.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/controller/OrderController.java
+/home/inoj/Desktop/ij/cw/order-service/src/main/java/com/clothify/orderservice/client/UserClient.java
+>>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7

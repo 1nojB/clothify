@@ -1,4 +1,3 @@
-// src/pages/admin/OrderManagement.jsx
 import React, { useState, useEffect } from 'react';
 import { fetchAllOrders, updateOrderStatus } from '../../api';
 
@@ -48,7 +47,7 @@ export default function OrderManagement() {
                 </div>
             </div>
 
-            {/* Filters */}
+            
             <div className="filters" style={{ marginBottom: 24 }}>
                 {['ALL', 'PENDING', 'PROCESSING', 'SHIPPED', 'DELIVERED', 'CANCELLED'].map(status => (
                     <button
@@ -120,7 +119,7 @@ export default function OrderManagement() {
                 </table>
             </div>
 
-            {/* Stats */}
+            
             <div className="order-stats" style={{ marginTop: 32, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
                 <div className="stat-mini">
                     <div className="stat-mini-label">Total Orders</div>

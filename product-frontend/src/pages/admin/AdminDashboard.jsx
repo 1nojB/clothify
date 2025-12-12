@@ -1,4 +1,3 @@
-// src/pages/admin/AdminDashboard.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchAllProducts, fetchAllOrders, fetchAllUsers } from '../../api';
@@ -38,7 +37,6 @@ export default function AdminDashboard() {
                 pendingOrders,
             });
 
-            // Get 5 most recent orders
             setRecentOrders(orders.slice(0, 5));
         } catch (err) {
             console.error('Failed to load dashboard data:', err);
@@ -54,7 +52,7 @@ export default function AdminDashboard() {
                 <p className="admin-subtitle">Manage your e-commerce platform</p>
             </div>
 
-            {/* Stats Cards */}
+            
             <div className="stats-grid">
                 <div className="stat-card">
                     <div className="stat-icon" style={{ background: '#3b82f6' }}>📦</div>
@@ -97,7 +95,7 @@ export default function AdminDashboard() {
                 </div>
             </div>
 
-            {/* Quick Actions */}
+            
             <div className="admin-section">
                 <h2 className="section-title">Quick Actions</h2>
                 <div className="quick-actions">
@@ -127,7 +125,7 @@ export default function AdminDashboard() {
                 </div>
             </div>
 
-            {/* Recent Orders */}
+            
             <div className="admin-section">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
                     <h2 className="section-title">Recent Orders</h2>

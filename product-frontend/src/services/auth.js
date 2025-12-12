@@ -1,5 +1,3 @@
-// src/services/auth.js
-// API Gateway Base URL for user service
 const API_GATEWAY = import.meta.env.VITE_API_GATEWAY || "http://localhost:8084";
 const BASE = import.meta.env.VITE_API_BASE || `${API_GATEWAY}/api/users`;
 

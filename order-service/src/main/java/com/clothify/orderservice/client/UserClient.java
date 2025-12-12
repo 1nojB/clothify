@@ -22,11 +22,21 @@ public class UserClient {
         }
     }
 
+<<<<<<< HEAD
+=======
+    // Validate user exists
+
+>>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public boolean userExists(Integer userId) {
         UserResponse user = getUser(userId);
         return user != null;
     }
 
+<<<<<<< HEAD
+=======
+    // Get user name
+
+>>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public String getUserName(Integer userId) {
         UserResponse user = getUser(userId);
         return user != null ? user.getName() : "Unknown User";

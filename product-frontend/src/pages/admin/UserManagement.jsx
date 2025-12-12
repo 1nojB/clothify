@@ -1,4 +1,3 @@
-// src/pages/admin/UserManagement.jsx
 import React, { useState, useEffect } from 'react';
 import { fetchAllUsers } from '../../api';
 

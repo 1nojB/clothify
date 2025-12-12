@@ -12,6 +12,11 @@ public class ProductClient {
 
     private static final String PRODUCT_URL = "http://localhost:8080/product-service/products";
 
+<<<<<<< HEAD
+=======
+    // Get product details
+
+>>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public ProductResponse getProduct(Integer productId) {
         try {
             String url = PRODUCT_URL + "/" + productId;
@@ -22,11 +27,21 @@ public class ProductClient {
         }
     }
 
+<<<<<<< HEAD
+=======
+    // Validate product exists
+
+>>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public boolean productExists(Integer productId) {
         ProductResponse product = getProduct(productId);
         return product != null;
     }
 
+<<<<<<< HEAD
+=======
+    // Get product name
+
+>>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public String getProductName(Integer productId) {
         ProductResponse product = getProduct(productId);
         return product != null ? product.getName() : "Unknown Product";

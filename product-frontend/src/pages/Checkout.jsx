@@ -1,4 +1,3 @@
-// src/pages/Checkout.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
@@ -26,14 +25,12 @@ export default function Checkout() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    // Redirect if not authenticated
     React.useEffect(() => {
         if (!isAuthenticated()) {
             navigate('/login?redirect=/checkout');
         }
     }, [isAuthenticated, navigate]);
 
-    // Redirect if cart is empty
     React.useEffect(() => {
         if (items.length === 0) {
             navigate('/');
@@ -84,20 +81,17 @@ export default function Checkout() {
             return false;
         }
 
-        // Validate card number (should be 16 digits)
         const cardDigits = formData.cardNumber.replace(/\s/g, '');
         if (cardDigits.length !== 16) {
             setError('Card number must be 16 digits');
             return false;
         }
 
-        // Validate CVV (should be 3 or 4 digits)
         if (formData.cvv.length < 3 || formData.cvv.length > 4) {
             setError('CVV must be 3 or 4 digits');
             return false;
         }
 
-        // Validate expiry date
         const [month, year] = formData.expiryDate.split('/');
         if (!month || !year || parseInt(month) < 1 || parseInt(month) > 12) {
             setError('Invalid expiry date');
@@ -118,7 +112,6 @@ export default function Checkout() {
         setError('');
 
         try {
-            // Prepare order data - simplified to match backend structure
             const orderData = {
                 userId: user?.id || user?.userId || 1,
                 customerId: user?.id || user?.userId || 1,
@@ -134,15 +127,12 @@ export default function Checkout() {
 
             console.log('Submitting order:', orderData);
 
-            // Create order
             const order = await createOrder(orderData);
 
             console.log('Order created:', order);
 
-            // Clear cart
             clearCart();
 
-            // Redirect to success page
             navigate(`/order-success/${order.id}`);
 
         } catch (err) {
@@ -171,10 +161,10 @@ export default function Checkout() {
                 <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 24 }}>Checkout</h1>
 
                 <div className="checkout-grid">
-                    {/* Left side - Forms */}
+                    
                     <div className="checkout-forms">
                         <form onSubmit={handleSubmit}>
-                            {/* Contact Information */}
+                            
                             <section className="checkout-section">
                                 <h2 className="checkout-section-title">Contact Information</h2>
                                 <div className="checkout-fields">
@@ -219,7 +209,7 @@ export default function Checkout() {
                                 </div>
                             </section>
 
-                            {/* Shipping Address */}
+                            
                             <section className="checkout-section">
                                 <h2 className="checkout-section-title">Shipping Address</h2>
                                 <div className="checkout-fields">
@@ -264,7 +254,7 @@ export default function Checkout() {
                                 </div>
                             </section>
 
-                            {/* Payment Information */}
+                            
                             <section className="checkout-section">
                                 <h2 className="checkout-section-title">Payment Information</h2>
                                 <div className="checkout-fields">
@@ -338,7 +328,7 @@ export default function Checkout() {
                         </form>
                     </div>
 
-                    {/* Right side - Order Summary */}
+                    
                     <div className="checkout-summary">
                         <div className="summary-card">
                             <h2 className="summary-title">Order Summary</h2>
