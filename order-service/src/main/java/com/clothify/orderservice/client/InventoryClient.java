@@ -12,11 +12,6 @@ public class InventoryClient {
 
     private static final String INVENTORY_URL = "http://localhost:8083/api/inventory";
 
-<<<<<<< HEAD
-=======
-    // Check if product has enough stock
-
->>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public boolean hasStock(Integer productId, int quantity) {
         try {
             String url = INVENTORY_URL + "/" + productId;
@@ -28,11 +23,6 @@ public class InventoryClient {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Get current stock quantity
-
->>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public Integer getStockQuantity(Integer productId) {
         try {
             String url = INVENTORY_URL + "/" + productId;
@@ -44,11 +34,6 @@ public class InventoryClient {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Reduce stock when order is placed
-
->>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public void reduceStock(Integer productId, int quantity) {
         try {
             String url = INVENTORY_URL + "/reduce/" + productId + "?qty=" + quantity;
@@ -59,11 +44,6 @@ public class InventoryClient {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Restore stock if order is cancelled
-
->>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
     public void restoreStock(Integer productId, int quantity) {
         try {
             String url = INVENTORY_URL + "/increase/" + productId + "?qty=" + quantity;

@@ -15,13 +15,7 @@ export default function ProductCard({ product, onAddToCart }) {
     e.stopPropagation();
     e.preventDefault();
 
-<<<<<<< HEAD
-
     if (!isAuthenticated()) {
-
-=======
-    if (!isAuthenticated()) {
->>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
       navigate(`/login?redirect=${encodeURIComponent(window.location.pathname)}`);
       return;
     }
@@ -31,10 +25,6 @@ export default function ProductCard({ product, onAddToCart }) {
       onAddToCart(product);
     } else {
       addToCart(product, 1);
-<<<<<<< HEAD
-
-=======
->>>>>>> 34141186933c2f6d59c51097719d2d5a3de5c2d7
       window.dispatchEvent(new CustomEvent("toggle-cart"));
     }
   }
